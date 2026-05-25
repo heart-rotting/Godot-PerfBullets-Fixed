@@ -71,7 +71,7 @@ public partial class BulProps : Resource
     /// The physics query parameters used internally for collision detection.
     /// Typed as Resource since PhysicsShapeQueryParameters2D is a Godot built-in
     /// and can be cast via .As&lt;PhysicsShapeQueryParameters2D&gt;() if needed.
-    /// </summary>
+    /// </summary>~
     public Resource Query
     {
         get => _resource.Get("query").As<Resource>();

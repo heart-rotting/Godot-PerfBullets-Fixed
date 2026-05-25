@@ -1,7 +1,7 @@
 using Godot;
 
 /// <summary>
-/// C# Wrapper around BulletType class (PerfBullets)
+/// C# Wrapper around BulletType class
 /// </summary>
 public partial class BulletType : Resource
 {
