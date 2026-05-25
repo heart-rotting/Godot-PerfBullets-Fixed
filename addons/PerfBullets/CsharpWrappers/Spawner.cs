@@ -1,7 +1,7 @@
 using Godot;
 
 /// <summary>
-/// C# Wrapper around Spawner class (PerfBullets)
+/// C# Wrapper around Spawner class
 /// </summary>
 public partial class Spawner : MultiMeshInstance2D
 {
