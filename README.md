@@ -1,6 +1,10 @@
 # Godot PerfBullets
 ![PerfBulletsLogo - Copy](https://github.com/Moonzel/Godot-PerfBullets/assets/96361809/e3c2392a-09f8-4cf9-b98b-f213b233ae62)
 
+## Forker's notes
+
+I forked PerfBullets since I needed it for my own project and the project seemed abandoned and didn't have some of the funcionality I needed. Although my modifications are minimal, if you find the fork useful please feel free to download, use, and edit for your own needs. -[@heart-rotting](https://github.com/heart-rotting)
+
 ## Spawn thousands of bullets or particles on screen while optimizing performance!
 
 <p align="center">

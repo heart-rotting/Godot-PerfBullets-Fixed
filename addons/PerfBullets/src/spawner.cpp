@@ -569,14 +569,17 @@ void Spawner::animate(Ref<BulProps> bul, int num, float delta){
         bul->set_animation_lifetime(0.0);
 
         Color custom = multi->get_instance_custom_data(num);
-
-        //Checks if there is more to go in the row, and if there is not, move down a column, and if neither, reset to the origional values
-        if (custom.g + 1.0 < rowsInAtlas){
-            multi->set_instance_custom_data(num, Color(custom.r, custom.g + 1.0, custom.b, custom.a));
+        
+        
+        //Checks if there is more to go in the row, and if there is not, move down a column, and if neither, reset to the original values
+        float newCol = custom.g + 1.0;          // custom.g = x = column index
+        if (newCol < columnsInAtlas) {
+            multi->set_instance_custom_data(num, Color(custom.r, newCol, custom.b, custom.a));
         }
         else {
-            if (custom.b + 1.0 < columnsInAtlas) {
-                multi->set_instance_custom_data(num, Color(custom.r, 0.0, custom.b + 1.0, custom.a));
+            float newRow = custom.b + 1.0;      // custom.b = y = row index
+            if (newRow < rowsInAtlas) {
+                multi->set_instance_custom_data(num, Color(custom.r, 0.0, newRow, custom.a));
             }
             else {
                 multi->set_instance_custom_data(num, Color(custom.r, 0.0, 0.0, custom.a));

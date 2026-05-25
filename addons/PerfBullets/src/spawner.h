@@ -76,7 +76,7 @@ private:
     float maxSpin = 50.0;
     float minSpin = 50.0;
     bool restartAtSpin = true;
-    float spinAcceleration = 0.0;
+    float spinAcceleration = 050;
     Spawner::Mode spawnerMode = PROCESS;
     bool homing = false;
     float homingWeight = 1.0;

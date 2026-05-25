@@ -7,6 +7,8 @@ class_name BulletBorder
 @export var topLeft: Node2D
 ##The top right point of the box
 @export var bottomRight: Node2D
+##List of spawners. If empty, check siblings for spawners
+@export var spawners: Array[Spawner]
 ##The calculated box
 var boundaryRect:Rect2
 
@@ -19,10 +21,15 @@ func update_boundary_rect() -> void:
 	if topLeft != null and bottomRight != null:
 		# Calculate the boundaryRect using the positions of topLeft and bottomRight
 		boundaryRect = Rect2(topLeft.global_position, bottomRight.global_position - topLeft.global_position)
-		# For every spawner, set the player and bounding box
-		for child in get_parent().get_children():
-			if child is Spawner:
-				child.set_bounding_box(boundaryRect)
+		
+		if spawners.is_empty():
+			# For every spawner, set the player and bounding box
+			for child in get_parent().get_children():
+				if child is Spawner:
+					child.set_bounding_box(boundaryRect)
+		else:
+			for spawner in spawners:
+				spawner.set_bounding_box(boundaryRect)
 
 
 
